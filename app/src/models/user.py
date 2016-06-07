@@ -1,12 +1,11 @@
 #coding=utf-8
-from flask import Flask,render_template,url_for,redirect
-import MySQLdb
-from flask.ext.sqlalchemy import SQLAlchemy
+# from flask import Flask,render_template,url_for,redirect
+# from flask.ext.sqlalchemy import SQLAlchemy
 
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@localhost/datacollection'
-db = SQLAlchemy(app)
+# app = Flask(__name__)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@localhost/datacollection'
+# db = SQLAlchemy(app)
+from app import db
 
 
 class User(db.Model):
