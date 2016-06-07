@@ -2,8 +2,6 @@
 from flask import Flask,render_template,url_for,redirect
 import MySQLdb
 from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.login import UserMixin
-from ..forms.loginForm import LoginForm
 
 
 app = Flask(__name__)
@@ -34,18 +32,18 @@ class Role(db.Model):
     users = db.relationship('User', backref='role')
 
 if __name__ == '__main__':
-    # db.create_all()
+    db.create_all()
     #新增
-    # inset = User(name='adf',password='1234',email='dajiang41@sina.com')
-    # db.session.add(inset)
-    # db.session.commit();
-    # user = User.query.all()
-    #user[1].email = 'dajiang3@sina.com'
-    # print user[1].email
-    form = LoginForm()
-
-    if form.validate_on_submit():
-        user = User.query.fillter_by(email=form.email.data).first()
-        if user is not None and user.verify_password(form.password.data):
-            redirect(url_for('index.html'))
-    render_template('user/login.html', title='Sign In', form=form)
+    inset = User(name='dajiang',password='123',email='dajiang@sina.com')
+    db.session.add(inset)
+    db.session.commit();
+    user = User.query.all()
+    user[1].email = 'dajiang@sina.com'
+    print user[1].email
+    # form = LoginForm()
+    #
+    # if form.validate_on_submit():
+    #     user = User.query.fillter_by(email=form.email.data).first()
+    #     if user is not None and user.verify_password(form.password.data):
+    #         redirect(url_for('index.html'))
+    # render_template('user/login.html', title='Sign In', form=form)
