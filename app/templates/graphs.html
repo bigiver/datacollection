@@ -150,6 +150,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="page-wrapper">
         <div class="graphs">
 	    <div class="graph_box">
+			{% for b,s in data%}
+				{{ b,s }}
+			{% endfor %}
 			<div class="col-md-4 grid_2"><div class="grid_1">
 				<h3>Circular</h3>
 				<canvas id="doughnut" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
