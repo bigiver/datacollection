@@ -5,7 +5,7 @@ import json
 # from ..models.jdCamera import JDCamera
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@localhost/cameraSalesDB'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@localhost/datacollection'
 db = SQLAlchemy(app)
 # from app import db
 
